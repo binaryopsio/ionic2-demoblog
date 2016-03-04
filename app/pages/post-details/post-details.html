@@ -1,0 +1,40 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Post Details</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-card *ngIf="selectedItem" class="selection">
+    <img src="img/binaryops-logo-no-tagline.png"/>
+    <ion-card-header>
+      {{selectedItem.title}}
+    </ion-card-header>
+    <ion-card-content>
+      {{selectedItem.postcontent}}
+    </ion-card-content>
+  </ion-card>
+   <ion-item>
+    <button item-right (click)="presentPromptComment()">Add Comment</button>
+  </ion-item>
+  <ion-list id="commentlist">
+    <ion-item-sliding  *ngFor="#comment of selectedItem.postid_comment">
+        <ion-item >
+          <ion-label>{{comment.content}}</ion-label>
+          <ion-checkbox dark checked="false" [(ngModel)]="comment.delete" (click)="checkItem(comment)"></ion-checkbox>
+        </ion-item>
+        <ion-item-options>
+          <button default (click)="editItem(comment)"><ion-icon name="create"></ion-icon>Edit</button>
+          <button danger (click)="deleteItem(comment)"><ion-icon name="trash"></ion-icon>Delete</button>
+        </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
+<ion-toolbar position="bottom">
+  <button disabled={{editSelectedDisabled}} (click)="editSelectedItem(comment)">
+    edit<ion-icon name="create"></ion-icon>
+  </button>
+  <button (click)="deleteSelectedComment()">Delete Selected</button>
+</ion-toolbar>

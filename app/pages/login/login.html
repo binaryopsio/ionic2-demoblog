@@ -1,0 +1,30 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Demo Intro</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-card>
+      <img src="img/binaryops-logo-no-tagline.png"/>
+    <ion-card-header>
+      DemoBlog Login
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Username</ion-label>
+          <ion-input type="text" [(ngModel)]="username" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item>
+        </ion-item>
+      </ion-list>
+      <button (click)="doLogin()">Login</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-card>
+    <img src="img/binaryops-logo-no-tagline.png"/>
+    <ion-card-header danger>
+      {{err.code}} <ion-icon danger name="warning"></ion-icon>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+          <h2 danger>{{err.message}}</h2>
+      </ion-item>
+      <ion-item>
+          <button (click)="whoAmI()"><ion-icon name="contact"></ion-icon>Who Am I</button>
+          <button (click)="close()"><ion-icon name="close"></ion-icon>Close</button>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+</ion-content>

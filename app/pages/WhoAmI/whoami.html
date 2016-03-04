@@ -1,0 +1,29 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Who Am I</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-card>
+    <img src="img/binaryops-logo-no-tagline.png"/>
+    <ion-card-header>
+      <h1>Who Am I <ion-icon name="checkmark"></ion-icon></h1>
+    </ion-card-header>
+      <ion-card-content>
+        <h2 default></h2> {{me.display_name}}
+
+      <ion-list>
+        <ion-item>
+            <h2>email: {{me.email}}</h2>
+            <h2>Application Privileges: {{privsText}}</h2>
+        </ion-item>
+        <ion-item>
+            <button (click)="login()"><ion-icon name="contact"></ion-icon>Login</button>
+            <button (click)="close()"><ion-icon name="close"></ion-icon>Close</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
