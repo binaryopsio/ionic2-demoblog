@@ -1,6 +1,6 @@
 import {Page, IonicApp, NavController, NavParams} from 'ionic/ionic';
 import {LoginPage} from '../login/login';
-import {BinaryopsService} from 'angular2-binaryops';
+import {BinaryopsService} from 'angular2-binaryops/client';
 
 
 @Page({

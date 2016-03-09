@@ -2,7 +2,7 @@ import {App, IonicApp, Platform} from 'ionic/ionic';
 import {IntroPage} from './pages/intro/intro';
 import {LoginPage} from './pages/login/login';
 import {BlogListPage} from './pages/bloglist/bloglist';
-import {BinaryopsService} from 'angular2-binaryops';
+import {BinaryopsService} from 'angular2-binaryops/client';
 
 
 @App({

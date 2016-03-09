@@ -1,5 +1,5 @@
 import {Page, IonicApp, Alert, NavController, NavParams} from 'ionic/ionic';
-import {BinaryopsService} from 'angular2-binaryops';
+import {BinaryopsService} from 'angular2-binaryops/client';
 
 @Page({
   templateUrl: 'build/pages/post-details/post-details.html'

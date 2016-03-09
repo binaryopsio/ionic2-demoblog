@@ -1,7 +1,7 @@
 import {Page, Modal, IonicApp, NavController, NavParams} from 'ionic/ionic';
 import {BlogDetailsPage} from '../blog-details/blog-details';
 import {ApiErrorPage} from '../ApiError/api-error';
-import {BinaryopsService} from 'angular2-binaryops';
+import {BinaryopsService} from 'angular2-binaryops/client';
 
 
 @Page({

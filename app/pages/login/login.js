@@ -1,6 +1,6 @@
 
   import {Page,  Alert, NavController, NavParams} from 'ionic/ionic';
-  import {BinaryopsService} from 'angular2-binaryops';
+  import {BinaryopsService} from 'angular2-binaryops/client';
   import {BlogListPage} from '../bloglist/bloglist';
   import 'rxjs/add/operator/map';
 

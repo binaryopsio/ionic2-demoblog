@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from 'ionic/ionic';
-import {BinaryopsService} from 'angular2-binaryops';
+import {BinaryopsService} from 'angular2-binaryops/client';
 import {PostDetailsPage} from '../post-details/post-details';
 import {WhoAmIPage} from '../WhoAmI/whoami';
 
