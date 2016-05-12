@@ -19,7 +19,7 @@
     <button item-right (click)="presentPromptComment()">Add Comment</button>
   </ion-item>
   <ion-list id="commentlist">
-    <ion-item-sliding  *ngFor="#comment of selectedItem.postid_comment">
+    <ion-item-sliding  *ngFor="#comment of selectedItem.comment_postid">
         <ion-item >
           <ion-label>{{comment.content}}</ion-label>
           <ion-checkbox dark checked="false" [(ngModel)]="comment.delete" (click)="checkItem(comment)"></ion-checkbox>

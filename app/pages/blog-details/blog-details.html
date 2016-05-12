@@ -18,8 +18,8 @@
       <ion-item *ngFor="#post of posts" (click)="itemTapped($event, post)">
           <h3>{{post.title}}</h3>
           <p>{{post.poscontent}}</p>
-          <p><ion-icon *ngIf="post.postid_comment" name="text">
-          {{post.postid_comment.length}} Comments</ion-icon></p>
+          <p><ion-icon *ngIf="post.comment_postid" name="text">
+          {{post.comment_postid.length}} Comments</ion-icon></p>
 
       </ion-item>
 

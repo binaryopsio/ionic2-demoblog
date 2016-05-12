@@ -45,7 +45,7 @@ export class PostDetailsPage {
     console.log("Getting ready to edit");
     //let toDelete = [];
 
-    for (var comment of this.selectedItem.postid_comment) {
+    for (var comment of this.selectedItem.comment_postid) {
       if (comment.delete){
         //console.log("Delete: " + comment.content);
         this.editItem(comment);//  toDelete.push(comment._id);
@@ -72,8 +72,8 @@ export class PostDetailsPage {
   deleteOneComment(cmt){
     this.binaryopsService.delete("comment", cmt).subscribe(
       data => {console.log(JSON.stringify(data));
-         let i = this.selectedItem.postid_comment.indexOf(cmt);
-         this.selectedItem.postid_comment.splice(i,1);
+         let i = this.selectedItem.comment_postid.indexOf(cmt);
+         this.selectedItem.comment_postid.splice(i,1);
       },
       err => console.log('Error: ' + err),
       () => console.log('Delete complete')
@@ -83,7 +83,7 @@ export class PostDetailsPage {
   deleteSelectedComment($event){
     console.log("Getting ready to delete");
     //let toDelete = [];
-    for (var comment of this.selectedItem.postid_comment) {
+    for (var comment of this.selectedItem.comment_postid) {
       if (comment.delete){
         //console.log("Delete: " + comment.content);
         this.deleteOneComment(comment);//  toDelete.push(comment._id);
@@ -122,11 +122,14 @@ export class PostDetailsPage {
           cmt.content = data.Comment;
 
           this.binaryopsService.update('comment',cmt).subscribe(
-              data => {console.log(data);
-              //  this.selectedItem.postid_comment.push(data);
-              console.log('is the ui ok?');
+              data => {
+                console.log(data);
+                //  this.selectedItem.comment_postid.push(data);
+                console.log('is the ui ok?');
               },
-              err => console.log('Error: ' + JSON.stringify(err)),
+              err => {
+                    console.log('Error: ' + JSON.stringify(err));
+                    console.log(err); },
               () => console.log('Comment update complete')
             );
           }
@@ -167,10 +170,15 @@ export class PostDetailsPage {
           inscmt.content = data.Comment;
           inscmt.postid = this.selectedItem._id;
           this.binaryopsService.insert('comment',inscmt).subscribe(
-              data => {console.log(data);
-                this.selectedItem.postid_comment.push(data);
+              data => {
+                console.log("comment added!");
+                console.log(data);
+                this.selectedItem.comment_postid.push(data);
               },
-              err => console.log('Error: ' + JSON.stringify(err)),
+              err => {
+                  console.log('Error: ' + JSON.stringify(err));
+                  console.log(err);
+                },
               () => console.log('Comment insert complete')
             );
           }
