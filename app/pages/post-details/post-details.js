@@ -165,22 +165,25 @@ export class PostDetailsPage {
           //   // invalid login
           //   return false
           // }
-          console.log('add comment here');
           let inscmt = {};
           inscmt.content = data.Comment;
           inscmt.postid = this.selectedItem._id;
-          this.binaryopsService.insert('comment',inscmt).subscribe(
-              data => {
-                console.log("comment added!");
-                console.log(data);
-                this.selectedItem.comment_postid.push(data);
-              },
-              err => {
-                  console.log('Error: ' + JSON.stringify(err));
-                  console.log(err);
+          if (inscmt.content) {
+            console.log('adding comment here');
+            this.binaryopsService.insert('comment',inscmt).subscribe(
+                data => {
+                  console.log("comment added!");
+                  console.log(data);
+                  this.selectedItem.comment_postid.push(data);
                 },
-              () => console.log('Comment insert complete')
-            );
+                err => {
+                    console.log('Error: ' + JSON.stringify(err));
+                    console.log(err);
+                },
+                () => {
+                  console.log('Comment insert complete');
+                });
+            }
           }
         }
       ]
